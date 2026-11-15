@@ -21,8 +21,13 @@ Run the warehouse_chaos module
 poetry run python -m warehouse_chaos
 ```
 
-
 Run tests
 ```
 poetry run pytest
+```
+
+Run formatting checks
+```
+poetry run ruff check .
+poetry run ruff format --check .
 ```
