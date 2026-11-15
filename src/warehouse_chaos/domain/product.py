@@ -1,7 +1,7 @@
 class Product:
     def __init__(self, sku, name):
         if not isinstance(sku, str) or not isinstance(name, str):
-            raise ValueError()
+            raise ValueError()  # noqa: TRY004
 
         if sku.strip() == "" or name.strip() == "":
             raise ValueError()
