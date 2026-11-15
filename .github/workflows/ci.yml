@@ -1,3 +1,5 @@
+name: Warehouse_chaos CI
+
 on:
   push:
     branches: ["main"]
