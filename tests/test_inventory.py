@@ -102,3 +102,21 @@ def test_products_have_independent_stock(inventory):
 
     assert inventory.get_stock("KB-001") == 7
     assert inventory.get_stock("MS-001") == 20
+
+
+@pytest.mark.parametrize("quantity", ["5", None, [], 2.5])
+def test_receive_rejects_non_integer_quantities(inventory, quantity):
+    with pytest.raises(ValueError):
+        inventory.receive("KB-001", quantity)
+
+    assert inventory.get_stock("KB-001") == 0
+
+
+@pytest.mark.parametrize("quantity", ["5", None, [], 2.5])
+def test_pick_rejects_non_integer_quantities(inventory, quantity):
+    inventory.receive("KB-001", 10)
+
+    with pytest.raises(ValueError):
+        inventory.pick("KB-001", quantity)
+
+    assert inventory.get_stock("KB-001") == 10
