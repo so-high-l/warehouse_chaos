@@ -14,6 +14,10 @@ git clone https://github.com/so-high-l/warehouse_chaos.git
 Install dependencies
 ```
 poetry install
+```
+
+Run the warehouse_chaos module 
+```
 poetry run python -m warehouse_chaos
 ```
 
