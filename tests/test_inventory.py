@@ -120,3 +120,14 @@ def test_pick_rejects_non_integer_quantities(inventory, quantity):
         inventory.pick("KB-001", quantity)
 
     assert inventory.get_stock("KB-001") == 10
+
+
+def test_shared_stock_dict():
+    inventory_1 = Inventory()
+    inventory_2 = Inventory()
+
+    inventory_1.register_product(Product("KB-001", "Keyboard"))
+    inventory_2.register_product(Product("KB-001", "Keyboard"))
+
+    inventory_1.receive("KB-001", 10)
+    assert inventory_2.get_stock("KB-001") == 0
