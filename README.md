@@ -8,7 +8,7 @@ Warehouse Chaos, production-style warehouse engineering project focused on trans
 
 Clone the github repo
 ```
-git clone <repo_link>
+git clone https://github.com/so-high-l/warehouse_chaos.git
 ```
 
 Install dependencies
