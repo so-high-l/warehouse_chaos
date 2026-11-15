@@ -20,3 +20,15 @@ def test_product_rejects_empty_sku(sku):
 def test_product_rejects_empty_name(name):
     with pytest.raises(ValueError):
         Product(sku="KB-001", name=name)
+
+
+@pytest.mark.parametrize("sku", [None, 123, []])
+def test_product_rejects_invalid_sku_type(sku):
+    with pytest.raises(ValueError):
+        Product(sku=sku, name="Mechanical Keyboard")
+
+
+@pytest.mark.parametrize("name", [None, 123, []])
+def test_product_rejects_invalid_name_type(name):
+    with pytest.raises(ValueError):
+        Product(sku="KB-001", name=name)
