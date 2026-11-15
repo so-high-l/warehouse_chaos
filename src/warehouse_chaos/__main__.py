@@ -1,3 +1,3 @@
-from .app import getBanner
+from .app import get_banner
 
-print(getBanner())
+print(get_banner())

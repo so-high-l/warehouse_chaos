@@ -1,5 +1,5 @@
-from warehouse_chaos.app import getBanner
+from warehouse_chaos.app import get_banner
 
 
 def test_banner():
-    assert getBanner() == "Atlas Fulfillment | Warehouse Chaos"
+    assert get_banner() == "Atlas Fulfillment | Warehouse Chaos"
